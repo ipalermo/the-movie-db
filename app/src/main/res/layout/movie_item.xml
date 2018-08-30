@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.android.example.themoviedb.vo.Movie" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        android:foreground="?attr/selectableItemBackground">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/movie_item_image"
+                android:layout_width="@dimen/movie_item_image_width"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{movie.posterUri}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/list_item_image_descr"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginRight="@dimen/default_margin"
+                android:text="@{movie.title}"
+                android:textAppearance="@style/Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/movie_item_image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Movie Name" />
+
+            <TextView
+                android:id="@+id/release_year"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginRight="@dimen/default_margin"
+                android:text="@{movie.releaseYear}"
+                android:textAppearance="@style/ExtraSmallText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/movie_item_image"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="Release year" />
+
+            <TextView
+                android:text="@{movie.overview}"
+                android:layout_height="0dp"
+                android:id="@+id/overview"
+                app:layout_constraintTop_toBottomOf="@+id/release_year"
+                app:layout_constraintStart_toEndOf="@id/movie_item_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
+                tools:layout_editor_absoluteX="@dimen/default_margin"
+                android:gravity="center_vertical"
+                tools:text="this is some overview more overview more overview"
+                android:textAppearance="@style/ExtraSmallText"
+                android:layout_width="0dp"
+                android:layout_marginLeft="@dimen/default_margin"
+                android:ellipsize="end"
+                android:maxLines="12"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

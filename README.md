@@ -16,12 +16,12 @@ The app is composed of 3 main screens.
 Allows you to search repositories on Github.
 Each search result is kept in the database in `RepoSearchResult` table where
 the list of repository IDs are denormalized into a single column.
-The actual `Repo` instances live in the `Repo` table.
+The actual `Movie` instances live in the `Movie` table.
 
 Each time a new page is fetched, the same `RepoSearchResult` record in the
 Database is updated with the new list of repository ids.
 
-**NOTE** The UI currently loads all `Repo` items at once, which would not
+**NOTE** The UI currently loads all `Movie` items at once, which would not
 perform well on lower end devices. Instead of manually writing lazy
 adapters, we've decided to wait until the built in support in Room is released.
 
