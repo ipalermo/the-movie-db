@@ -1,18 +1,14 @@
 The Movie DB
 ===========================================================
 
-This is an Android app that interacts with the TMDB API (http://developers.themoviedb.org/). sample app that uses Android Architecture Components with Dagger 2.
-
-**NOTE** It is a relatively more complex and complete example so if you are not familiar
-with [Architecture Components][arch], you are highly recommended to check other examples
-in this repository first.
+This is an Android app that interacts with the TMDB API (http://developers.themoviedb.org/). It uses Android Architecture Components with Dagger 2.
 
 Introduction
 -------------
 
 ### Functionality
 The app is composed of a single main screen where a list of popular movies is shown as soon as the app launches.
-The user hasthe possibility to search for a movie by keyword. The search is automatically executed while typing the search term. When the user continues typing, the old search is cancelled and a search for the new term is started.
+The user has the possibility to search for a movie by keyword. The search is automatically executed while typing the search term. When the user continues typing, the old search is cancelled and a search for the new term is started.
 
 #### SearchFragment
 Allows you to search movies on TMDB.
